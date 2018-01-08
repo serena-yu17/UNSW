@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="beers@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="beers">
+      <ObjectId>73806</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12411</ObjectId>
+    </database>
+    <database id="4" parent="1" name="asx">
+      <ObjectId>40960</ObjectId>
+    </database>
+    <schema id="5" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-09-01.19:01:57.997</IntrospectionTimestamp>
+      <IntrospectionStateNumber>13280</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="6" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="information_schema">
+      <ObjectId>12119</ObjectId>
+    </schema>
+    <sequence id="11" parent="5" name="beer_id_seq">
+      <ObjectId>73849</ObjectId>
+      <StateNumber>13164</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="12" parent="5" name="beerstyle_id_seq">
+      <ObjectId>73841</ObjectId>
+      <StateNumber>13163</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="13" parent="5" name="brewer_id_seq">
+      <ObjectId>73828</ObjectId>
+      <StateNumber>13162</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="14" parent="5" name="location_id_seq">
+      <ObjectId>73807</ObjectId>
+      <StateNumber>13160</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="15" parent="5" name="taster_id_seq">
+      <ObjectId>73815</ObjectId>
+      <StateNumber>13161</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <object-type id="16" parent="5" name="beerinfo">
+      <ObjectId>90240</ObjectId>
+      <StateNumber>13269</StateNumber>
+      <SubKind>composite</SubKind>
+      <SubCategory>composite</SubCategory>
+    </object-type>
+    <table id="17" parent="5" name="beer">
+      <ObjectId>73851</ObjectId>
+      <StateNumber>13165</StateNumber>
+    </table>
+    <table id="18" parent="5" name="beerstyle">
+      <ObjectId>73843</ObjectId>
+      <StateNumber>13164</StateNumber>
+    </table>
+    <table id="19" parent="5" name="brewer">
+      <ObjectId>73830</ObjectId>
+      <StateNumber>13164</StateNumber>
+    </table>
+    <table id="20" parent="5" name="location">
+      <ObjectId>73809</ObjectId>
+      <StateNumber>13162</StateNumber>
+    </table>
+    <table id="21" parent="5" name="ratings">
+      <ObjectId>73867</ObjectId>
+      <StateNumber>13165</StateNumber>
+    </table>
+    <table id="22" parent="5" name="taster">
+      <ObjectId>73817</ObjectId>
+      <StateNumber>13165</StateNumber>
+    </table>
+    <view id="23" parent="5" name="allratings">
+      <ObjectId>90234</ObjectId>
+      <StateNumber>13266</StateNumber>
+    </view>
+    <view id="24" parent="5" name="beersummary">
+      <ObjectId>90243</ObjectId>
+      <StateNumber>13279</StateNumber>
+    </view>
+    <view id="25" parent="5" name="johnsfavouritebeer">
+      <ObjectId>90200</ObjectId>
+      <StateNumber>13267</StateNumber>
+    </view>
+    <view id="26" parent="5" name="tastersbycountry">
+      <ObjectId>90247</ObjectId>
+      <StateNumber>13280</StateNumber>
+    </view>
+    <routine id="27" parent="5" name="agg_concat">
+      <ObjectId>90190</ObjectId>
+      <StateNumber>13276</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>text, text</ArgumentsDefinition>
+      <ResultsDefinition>text</ResultsDefinition>
+      <LanguageName>sql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <routine id="28" parent="5" name="beerstyle">
+      <ObjectId>73888</ObjectId>
+      <StateNumber>13271</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>brewer text, beer text</ArgumentsDefinition>
+      <ResultsDefinition>text</ResultsDefinition>
+      <LanguageName>sql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <routine id="29" parent="5" name="beerstyle1">
+      <ObjectId>73890</ObjectId>
+      <StateNumber>13272</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>_brewer text, _beer text</ArgumentsDefinition>
+      <ResultsDefinition>text</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <routine id="30" parent="5" name="beersummary">
+      <ObjectId>82001</ObjectId>
+      <StateNumber>13275</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ResultsDefinition>text</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <routine id="31" parent="5" name="concat">
+      <ObjectId>90242</ObjectId>
+      <StateNumber>13278</StateNumber>
+      <VolatilityKind>immutable</VolatilityKind>
+      <LanguageName>internal</LanguageName>
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <routine id="32" parent="5" name="favouritebeer">
+      <ObjectId>90241</ObjectId>
+      <StateNumber>13270</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>taster text</ArgumentsDefinition>
+      <ResultsDefinition>SETOF beerinfo</ResultsDefinition>
+      <LanguageName>sql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <ReturnsSet>1</ReturnsSet>
+    </routine>
+    <routine id="33" parent="5" name="tasteraddress">
+      <ObjectId>73892</ObjectId>
+      <StateNumber>13274</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>taster text</ArgumentsDefinition>
+      <ResultsDefinition>text</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <object-attribute id="34" parent="16" name="brewer">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </object-attribute>
+    <object-attribute id="35" parent="16" name="beer">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </object-attribute>
+    <column id="36" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13164</StateNumber>
+      <SequenceName>beer_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;beer_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="37" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13164</StateNumber>
+    </column>
+    <column id="38" parent="17" name="style">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13164</StateNumber>
+    </column>
+    <column id="39" parent="17" name="brewer">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13164</StateNumber>
+    </column>
+    <index id="40" parent="17" name="beer_pkey">
+      <ObjectId>73855</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="41" parent="17" name="beer_pkey">
+      <ObjectId>73856</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>beer_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="42" parent="17" name="beer_style_fkey">
+      <ObjectId>73857</ObjectId>
+      <ColNames>style</ColNames>
+      <RefTableId>73843</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>beerstyle</RefTableName>
+      <RefKeyName>beerstyle_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="43" parent="17" name="beer_brewer_fkey">
+      <ObjectId>73862</ObjectId>
+      <ColNames>brewer</ColNames>
+      <RefTableId>73830</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>brewer</RefTableName>
+      <RefKeyName>brewer_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="44" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13163</StateNumber>
+      <SequenceName>beerstyle_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;beerstyle_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="45" parent="18" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13163</StateNumber>
+    </column>
+    <index id="46" parent="18" name="beerstyle_pkey">
+      <ObjectId>73847</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="47" parent="18" name="beerstyle_pkey">
+      <ObjectId>73848</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>beerstyle_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="48" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13162</StateNumber>
+      <SequenceName>brewer_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;brewer_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="49" parent="19" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13162</StateNumber>
+    </column>
+    <column id="50" parent="19" name="locatedin">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13162</StateNumber>
+    </column>
+    <index id="51" parent="19" name="brewer_pkey">
+      <ObjectId>73834</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="19" name="brewer_pkey">
+      <ObjectId>73835</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>brewer_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="19" name="brewer_locatedin_fkey">
+      <ObjectId>73836</ObjectId>
+      <ColNames>locatedin</ColNames>
+      <RefTableId>73809</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>location</RefTableName>
+      <RefKeyName>location_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="54" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13160</StateNumber>
+      <SequenceName>location_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;location_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="55" parent="20" name="state">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>13160</StateNumber>
+    </column>
+    <column id="56" parent="20" name="country">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13160</StateNumber>
+    </column>
+    <index id="57" parent="20" name="location_pkey">
+      <ObjectId>73813</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="58" parent="20" name="location_pkey">
+      <ObjectId>73814</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>location_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="59" parent="21" name="taster">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13165</StateNumber>
+    </column>
+    <column id="60" parent="21" name="beer">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13165</StateNumber>
+    </column>
+    <column id="61" parent="21" name="score">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13165</StateNumber>
+    </column>
+    <foreign-key id="62" parent="21" name="ratings_taster_fkey">
+      <ObjectId>73871</ObjectId>
+      <ColNames>taster</ColNames>
+      <RefTableId>73817</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>taster</RefTableName>
+      <RefKeyName>taster_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="63" parent="21" name="ratings_beer_fkey">
+      <ObjectId>73876</ObjectId>
+      <ColNames>beer</ColNames>
+      <RefTableId>73851</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>beer</RefTableName>
+      <RefKeyName>beer_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <check id="64" parent="21" name="validrating">
+      <ObjectId>73870</ObjectId>
+      <ColNames>score</ColNames>
+      <Predicate>(score &gt;= 1) AND (score &lt;= 5)</Predicate>
+    </check>
+    <column id="65" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13161</StateNumber>
+      <SequenceName>taster_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;taster_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="66" parent="22" name="family">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13161</StateNumber>
+    </column>
+    <column id="67" parent="22" name="given">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+      <StateNumber>13161</StateNumber>
+    </column>
+    <column id="68" parent="22" name="livesin">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13161</StateNumber>
+    </column>
+    <index id="69" parent="22" name="taster_pkey">
+      <ObjectId>73821</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="70" parent="22" name="taster_pkey">
+      <ObjectId>73822</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>taster_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="71" parent="22" name="taster_livesin_fkey">
+      <ObjectId>73823</ObjectId>
+      <ColNames>livesin</ColNames>
+      <RefTableId>73809</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>location</RefTableName>
+      <RefKeyName>location_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="72" parent="23" name="taster">
+      <Position>1</Position>
+      <DataType>varchar(30)|0</DataType>
+      <StateNumber>13266</StateNumber>
+    </column>
+    <column id="73" parent="23" name="beer">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>13266</StateNumber>
+    </column>
+    <column id="74" parent="23" name="brewer">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>13266</StateNumber>
+    </column>
+    <column id="75" parent="23" name="rating">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>13266</StateNumber>
+    </column>
+    <column id="76" parent="24" name="beer">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>13279</StateNumber>
+    </column>
+    <column id="77" parent="24" name="rating">
+      <Position>2</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>13279</StateNumber>
+    </column>
+    <column id="78" parent="24" name="tasters">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>13279</StateNumber>
+    </column>
+    <column id="79" parent="25" name="brewer">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>13222</StateNumber>
+    </column>
+    <column id="80" parent="25" name="beer">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>13222</StateNumber>
+    </column>
+    <column id="81" parent="26" name="country">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>13280</StateNumber>
+    </column>
+    <column id="82" parent="26" name="tasters">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>13280</StateNumber>
+    </column>
+    <argument id="83" parent="27">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="84" parent="27">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="85" parent="27">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="86" parent="28" name="brewer">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="87" parent="28" name="beer">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="88" parent="28">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="89" parent="29" name="_brewer">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="90" parent="29" name="_beer">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="91" parent="29">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="92" parent="30">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="93" parent="31">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="94" parent="31">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="95" parent="32" name="taster">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="96" parent="32">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>setof beerinfo|0</DataType>
+    </argument>
+    <argument id="97" parent="33" name="taster">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="98" parent="33">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>text|0</DataType>
+    </argument>
+  </database-model>
+</dataSource>

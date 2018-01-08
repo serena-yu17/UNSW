@@ -1,0 +1,66 @@
+\documentclass[10pt]{article}
+\usepackage[left=0pt,right=0pt]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{cancel}
+\pagestyle{empty}
+
+\newcommand{\N}[5]{\tikz{\node[label=above left:{\tiny #1},
+                               label=above right:{\tiny #2},
+                               label=below left:{\tiny #3},
+                               label=below right:{\tiny #4}]{#5};}}
+
+\begin{document}
+
+\tikzset{every node/.style={minimum size=.5cm}}
+
+\begin{center}
+\begin{tabular}{||@{}c@{}|@{}c@{}|@{}c@{}||@{}c@{}|@{}c@{}|@{}c@{}||@{}c@{}|@{}c@{}|@{}c@{}||}\hline\hline
+% Line 1
+\N{\cancel{2}}{\cancel{4}}{\cancel{6}}{\cancel{7} \cancel{8}}{6} & \N{}{}{}{}{3} & \N{}{}{}{}{9} &
+\N{}{}{}{}{5} & \N{\cancel{2}}{\cancel{4}}{\cancel{6}}{\cancel{7}}{7} & \N{\cancel{2}}{\cancel{4}}{\cancel{6}}{\cancel{7}}{4} &
+\N{\cancel{1}}{}{\cancel{6}}{}{1} & \N{\cancel{1} \cancel{2}}{}{}{\cancel{8}}{8} & \N{\cancel{1} \cancel{2}}{}{\cancel{6}}{}{2} \\ \hline
+
+% Line 2
+\N{\cancel{2}}{\cancel{4}}{\cancel{5} \cancel{6}}{}{5} & \N{\cancel{2}}{\cancel{4}}{\cancel{5} \cancel{6}}{}{4} & \N{}{}{}{}{1} &
+\N{}{}{}{}{8} & \N{\cancel{2}}{\cancel{3} \cancel{4}}{\cancel{6}}{}{2} & \N{}{}{}{}{9} &
+\N{}{\cancel{3}}{\cancel{5} \cancel{6}}{}{3} & \N{}{}{}{}{7} & \N{\cancel{2}}{}{\cancel{6}}{}{6} \\ \hline
+
+% Line 3
+\N{\cancel{2}}{}{\cancel{5} \cancel{6}}{\cancel{7} \cancel{8}}{7} & \N{\cancel{2}}{}{\cancel{5} \cancel{6}}{\cancel{7} \cancel{8}}{8} & \N{\cancel{2}}{}{\cancel{5}}{\cancel{8}}{2} &
+\N{\cancel{2}}{\cancel{3}}{\cancel{6}}{}{6} & \N{}{}{}{}{1} & \N{\cancel{2}}{\cancel{3}}{\cancel{6}}{\cancel{7}}{3} &
+\N{}{}{}{}{9} & \N{\cancel{2}}{\cancel{3}}{\cancel{5}}{\cancel{8}}{5} & \N{}{}{}{}{4} \\ \hline\hline
+
+% Line 4
+\N{}{}{}{}{1} & \N{\cancel{2}}{}{\cancel{5} \cancel{6}}{\cancel{8} \cancel{9}}{9} & \N{\cancel{2}}{}{\cancel{5}}{\cancel{8}}{8} &
+\N{}{}{}{}{4} & \N{\cancel{2}}{}{\cancel{5} \cancel{6}}{\cancel{7} \cancel{8}}{6} & \N{\cancel{2}}{}{\cancel{5} \cancel{6}}{\cancel{7}}{7} &
+\N{}{}{\cancel{5}}{\cancel{7}}{5} & \N{\cancel{2}}{}{\cancel{5}}{\cancel{9}}{2} & \N{}{}{}{}{3} \\ \hline
+
+% Line 5
+\N{\cancel{2}}{\cancel{3} \cancel{4}}{\cancel{5} \cancel{6}}{\cancel{8} \cancel{9}}{3} & \N{\cancel{2}}{\cancel{4}}{\cancel{5} \cancel{6}}{\cancel{8} \cancel{9}}{6} & \N{\cancel{2}}{\cancel{3} \cancel{4}}{\cancel{5}}{\cancel{8}}{5} &
+\N{\cancel{1} \cancel{2}}{\cancel{3}}{\cancel{6}}{\cancel{9}}{9} & \N{\cancel{2}}{\cancel{3}}{\cancel{5} \cancel{6}}{\cancel{7} \cancel{8}}{8} & \N{\cancel{2}}{\cancel{3}}{\cancel{5} \cancel{6}}{\cancel{7}}{2} &
+\N{\cancel{1}}{\cancel{4}}{\cancel{5}}{\cancel{7}}{4} & \N{\cancel{1} \cancel{2}}{\cancel{4}}{\cancel{5}}{\cancel{9}}{1} & \N{\cancel{1} \cancel{2}}{}{}{\cancel{7} \cancel{9}}{7} \\ \hline
+
+% Line 6
+\N{\cancel{2}}{\cancel{3} \cancel{4}}{\cancel{5}}{\cancel{9}}{4} & \N{\cancel{2}}{\cancel{4}}{\cancel{5}}{\cancel{9}}{2} & \N{}{}{}{}{7} &
+\N{\cancel{1} \cancel{2}}{\cancel{3}}{}{\cancel{9}}{1} & \N{\cancel{2}}{\cancel{3}}{\cancel{5}}{}{3} & \N{\cancel{2}}{\cancel{3}}{\cancel{5}}{}{5} &
+\N{}{}{}{}{8} & \N{}{}{}{}{6} & \N{\cancel{1} \cancel{2}}{}{}{\cancel{9}}{9} \\ \hline\hline
+
+% Line 7
+\N{}{\cancel{3} \cancel{4}}{\cancel{5}}{\cancel{9}}{9} & \N{}{\cancel{4}}{\cancel{5}}{\cancel{9}}{5} & \N{}{}{}{}{6} &
+\N{}{}{}{}{7} & \N{}{\cancel{3} \cancel{4}}{\cancel{5}}{}{4} & \N{}{}{}{}{8} &
+\N{}{}{}{}{2} & \N{\cancel{1}}{\cancel{3} \cancel{4}}{}{\cancel{9}}{3} & \N{\cancel{1}}{}{}{\cancel{9}}{1} \\ \hline
+
+% Line 8
+\N{\cancel{2}}{\cancel{3} \cancel{4}}{}{\cancel{7} \cancel{8}}{8} & \N{}{}{}{}{1} & \N{\cancel{2}}{\cancel{3} \cancel{4}}{}{\cancel{8}}{3} &
+\N{\cancel{2}}{\cancel{3}}{\cancel{6}}{}{2} & \N{}{}{}{}{9} & \N{\cancel{2}}{\cancel{3} \cancel{4}}{\cancel{6}}{}{6} &
+\N{}{\cancel{3} \cancel{4}}{\cancel{6}}{\cancel{7}}{7} & \N{}{\cancel{3} \cancel{4}}{}{}{4} & \N{}{}{}{}{5} \\ \hline
+
+% Line 9
+\N{\cancel{2}}{\cancel{3} \cancel{4}}{\cancel{5}}{\cancel{7} \cancel{9}}{2} & \N{\cancel{2}}{\cancel{4}}{\cancel{5}}{\cancel{7} \cancel{9}}{7} & \N{\cancel{2}}{\cancel{3} \cancel{4}}{\cancel{5}}{}{4} &
+\N{\cancel{2}}{\cancel{3}}{\cancel{6}}{}{3} & \N{\cancel{2}}{\cancel{3} \cancel{4}}{\cancel{5} \cancel{6}}{}{5} & \N{}{}{}{}{1} &
+\N{}{\cancel{3} \cancel{4}}{\cancel{6}}{\cancel{7}}{6} & \N{}{\cancel{3} \cancel{4}}{}{\cancel{9}}{9} & \N{}{}{}{}{8} \\ \hline\hline
+\end{tabular}
+\end{center}
+
+\end{document}

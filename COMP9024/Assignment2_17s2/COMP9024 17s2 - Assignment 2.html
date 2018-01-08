@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0060)http://cgi.cse.unsw.edu.au/~cs9024/17s2/assn/assn2/index.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>COMP9024 17s2 - Assignment 2</title>
+<link rel="stylesheet" type="text/css" href="./COMP9024 17s2 - Assignment 2_files/course.css"></head>
+<body>
+<div align="center">
+<table width="100%" border="0">
+<tbody><tr valign="top">
+<td align="left" width="25%">
+  <span class="tiny"><a href="http://www.cse.unsw.edu.au/~cs9024/17s2/index.php">COMP9024 17s2</a></span>
+</td>
+<td align="center" width="50%">
+  <span class="heading">Assignment 2</span><br>
+  <span class="subheading">Word Chains</span>
+</td>
+<td align="right" width="25%">
+  <span class="tiny"><a href="http://www.handbook.unsw.edu.au/postgraduate/courses/2017/COMP9024.html">Data Structures and Algorithms</a></span>
+</td>
+</tr></tbody></table>
+</div>
+<h2>Change Log</h2>
+
+We may make minor changes to the spec to address/clarify some outstanding issues. These may require minimal changes in your design/code, if at all. Students are strongly encouraged to check the change log regularly.
+<br><br>
+<b>25 September</b>
+<ul>
+   <li>Example for stage 3 corrected
+</li></ul>
+<b>Version 1: Released on 22 September 2017</b>
+
+<h2>Objectives</h2>
+
+<p>The assignment aims to give you more independent, self-directed practice with</p>
+<ul>
+<li> advanced data structures, especially graphs
+</li><li> graph algorithms
+</li><li> asymptotic runtime analysis
+</li></ul>
+
+<h2>Admin</h2>
+
+<table cellpadding="6">
+<tbody><tr><td valign="top"><b>Marks</b></td><td></td>
+  <td>3 marks for stage 1 (correctness)
+  <br>3 marks for stage 2 (correctness)
+  <br>3 marks for stage 3 (correctness)
+  <br>3 marks for stage 4 (correctness)
+  <br>2 marks for complexity analysis
+  <br>1 mark for style
+  <br>———————
+  <br>Total: 15 marks</td></tr>
+<tr><td><b>Due</b></td><td></td><td>23:59 on <b>Wednesday</b> 18 October (week 12)</td></tr>
+<tr><td valign="top"><b>Late</b></td><td></td><td>2.25 marks (15%) off the ceiling per day late
+  <br><small>(e.g. if you are 25 hours late, your maximum possible mark is 10.5)</small></td></tr>
+</tbody></table>
+
+<h2>Aim</h2>
+
+<p>A <b>word chain</b> is a sequence of <i>k</i> &#8805; 1 words:
+</p><center>
+&#969;<sub>1</sub> &#8594; &#969;<sub>2</sub> &#8594; &#969;<sub>3</sub> &#8594; … &#8594; &#969;<sub><i>k</i>-1</sub> &#8594; &#969;<sub><i>k</i></sub>
+</center>
+in which
+<ul>
+<li> words appear in alphabetical order, and
+</li><li> each word &#969;<sub><i>i</i>+1</sub> is related to its predecessor &#969;<sub><i>i</i></sub> by 
+<ol>
+<li> changing one letter, e.g. &nbsp;<tt>bear</tt> &#8594; <tt>beer</tt>
+</li><li> <i>or</i> adding or removing one letter, e.g. &nbsp;<tt>compete</tt> &#8594; <tt>complete</tt>&nbsp; or &nbsp;<tt>bear</tt> &#8594; <tt>ear</tt>.
+</li></ol>
+</li></ul>
+<p></p>
+<p>An example is the following word chain of length <i>k</i> = 6:
+</p><center>
+  <tt>bear</tt> &#8594; <tt>dear</tt> &#8594; <tt>ear</tt> &#8594; <tt>ears</tt> &#8594; <tt>hears</tt> &#8594; <tt>hearts</tt>
+</center>
+
+<p>Your task is to write a program for computing the <i>longest</i> word chains that can be built from a given collection of words.
+</p>
+<p>Your program should:</p>
+<ul>
+<li> prompt the user to input
+<ul>
+<li> a positive number <i>n</i>
+</li><li> <i>n</i> words
+</li></ul>
+</li><li> <b>Task 1:</b> compute and output, for each word &#969;, all words that could immediately follow &#969; in a word chain,
+</li><li> <b>Task 2:</b> compute and output
+<ol type="a">
+<li> the maximum length of a word chain that can be built from the given words,
+</li><li> all word chains of maximum length that can be built from the given words.
+</li></ol></li></ul>
+
+
+<p> Your program should include a time complexity analysis, in Big-Oh notation, for
+</p><ol>
+<li> your implementation for task 1, depending on the number <i>n</i> of words and the maximum length <i>m</i> of a word;
+</li><li> your implementation for task 2, depending on the number <i>n</i> of words.
+</li></ol>
+
+<p><i>Note:</i></p>
+
+<ul>
+<li> You may assume that
+<ul>
+<li> the user input is correct (a number <i>n</i> &#8805;1 followed by <i>n</i> words);
+</li><li> the user inputs the words in alphabetical order;
+</li><li> no word has more than 19 characters;
+</li><li> there will be no more than 1000 words.
+</li></ul>
+
+</li><li> <p>It may not be immediately obvious, but this problem is best understood and solved as a graph problem. Hence, if you find any of the following ADTs from the lectures useful, then you can, and indeed are encouraged to, use them with your program:</p>
+<ul>
+<li> stack ADT : &nbsp; <a href="http://www.cse.unsw.edu.au/~cs9024/17s2/slides/week03/progs/stack.h"><tt>stack.h</tt></a>, <a href="http://www.cse.unsw.edu.au/~cs9024/17s2/slides/week03/progs/stack.c"><tt>stack.c</tt></a>
+</li><li> queue ADT : &nbsp; <a href="http://www.cse.unsw.edu.au/~cs9024/17s2/slides/week07/progs/queue.h"><tt>queue.h</tt></a>, <a href="http://www.cse.unsw.edu.au/~cs9024/17s2/slides/week07/progs/queue.c"><tt>queue.c</tt></a>
+</li><li> graph ADT : &nbsp; <a href="http://www.cse.unsw.edu.au/~cs9024/17s2/slides/week06/progs/Graph.h"><tt>Graph.h</tt></a>, <a href="http://www.cse.unsw.edu.au/~cs9024/17s2/slides/week06/progs/Graph.c"><tt>Graph.c</tt></a>
+</li><li> weighted graph ADT : &nbsp; <a href="http://www.cse.unsw.edu.au/~cs9024/17s2/slides/week08/progs/WGraph.h"><tt>WGraph.h</tt></a>, <a href="http://www.cse.unsw.edu.au/~cs9024/17s2/slides/week08/progs/WGraph.c"><tt>WGraph.c</tt></a>
+</li></ul>
+<p>You are free to modify any of the four ADTs for the purpose of the assignment (but without changing the file names). If your program is using one or more of these ADTs, you should submit both the header and implementation file, even if you have not changed them.
+</p>
+
+</li><li>
+<p>
+Your main program file should start with a comment: <tt>/* … */</tt> that contains the time complexity of your solutions for task 1 and task 2, together with an explanation.
+</p>
+
+</li></ul>
+
+<br><h2>Stage 1 (3 marks)</h2>
+
+<p>For stage 1, you should demonstrate that you can build the underlying graph correctly <i>under the assumption that all words are of equal length.</i>
+</p>
+
+<p>All tests for this stage will be such that all words have the same length and all given words together form a word chain. Hence, all you need to do for task 2 at this stage is to output the total number of words (= maximum length of a chain) and all words (= the only maximal chain).</p>
+
+Here is an example to show the desired behaviour of your program for a stage 1 test:
+<pre class="command_line"><kbd class="shell">./wordchains</kbd>
+Enter a number: <b>6</b>
+Enter word: <b>bear</b>
+Enter word: <b>dear</b>
+Enter word: <b>hear</b>
+Enter word: <b>heat</b>
+Enter word: <b>neat</b>
+Enter word: <b>seat</b>
+
+bear: dear hear
+dear: hear
+hear: heat
+heat: neat seat
+neat: seat
+seat:
+
+Maximum chain length: 6
+Maximal chains:
+bear -&gt; dear -&gt; hear -&gt; heat -&gt; neat -&gt; seat
+</pre>
+
+<br><h2>Stage 2 (3 marks)</h2>
+
+<p>For stage 2, you should demonstrate that you can find a <i>single</i> maximal chain under the assumption that all words are of equal length.
+</p>
+
+<p>All tests for this stage will be such that all words have the same length and there is only one  maximal word chain.</p>
+
+Here is an example to show the desired behaviour of your program for a stage 2 test:
+<pre class="command_line"><kbd class="shell">./wordchains</kbd>
+Enter a number: <b>8</b>
+Enter word: <b>bear</b>
+Enter word: <b>beer</b>
+Enter word: <b>dear</b>
+Enter word: <b>deer</b>
+Enter word: <b>hear</b>
+Enter word: <b>heat</b>
+Enter word: <b>rear</b>
+Enter word: <b>seat</b>
+
+bear: beer dear hear rear
+beer: deer
+dear: deer hear rear
+deer:
+hear: heat rear
+heat: seat
+rear:
+seat:
+
+Maximum chain length: 5
+Maximal chains:
+bear -&gt; dear -&gt; hear -&gt; heat -&gt; seat
+</pre>
+
+<br><h2>Stage 3 (3 marks)</h2>
+
+<p>For stage 3, you should extend your program for stage 2 such that words can be of different length.
+</p>
+
+<p>All tests for this stage will be such that there is only one maximal word chain.</p>
+
+Here is an example to show the desired behaviour of your program for a stage 3 test:
+<pre class="command_line"><kbd class="shell">./wordchains</kbd>
+Enter a number: <b>6</b>
+Enter word: <b>cast</b>
+Enter word: <b>cat</b>
+Enter word: <b>cats</b>
+Enter word: <b>cost</b>
+Enter word: <b>most</b>
+Enter word: <b>moyst</b>
+
+cast: cat cost
+cat: cats
+cats:
+cost: most
+most: moyst
+moyst:
+
+Maximum chain length: 4
+Maximal chains:
+cast -&gt; cost -&gt; most -&gt; moyst
+</pre>
+
+
+<br><h2>Stage 4 (3 marks)</h2>
+
+<p>For stage 4, you should extend your program for stage 3 such that it outputs, in alphabetical order, all word chains of maximal length.
+</p>
+
+Here is an example to show the desired behaviour of your program for a stage 4 test:
+<pre class="command_line"><kbd class="shell">./wordchains</kbd>
+Enter a number: <b>5</b>
+Enter word: <b>cast</b>
+Enter word: <b>cat</b>
+Enter word: <b>cats</b>
+Enter word: <b>cost</b>
+Enter word: <b>most</b>
+
+cast: cat cost
+cat: cats
+cats:
+cost: most
+most:
+
+Maximum chain length: 3
+Maximal chains:
+cast -&gt; cat -&gt; cats
+cast -&gt; cost -&gt; most
+</pre>
+
+<p><i>Note:</i>
+</p><ul>
+<li> It is required that the maximal chains be printed in alphabetical order.
+</li></ul>
+
+<br><h2>Testing</h2>
+
+  <p><i>We have created a script that can automatically test your program. To run this test you can execute the </i><tt>dryrun</tt><i> program for the corresponding assignment, i.e. <tt>assn2</tt>. It expects to find, in the current directory, the program </i><tt>wordchains.c</tt><i> and any of the admissible ADTs (<tt>Graph,WGraph,stack,queue</tt>) that your program is using, even if you use them unchanged. You can use dryrun as follows:</i></p>
+<pre class="command_line"><kbd class="shell">~cs9024/bin/dryrun assn2</kbd>
+</pre>
+
+<p><i>Please note: Passing the dryrun tests does not guarantee that your program is correct. You should thoroughly test your program with your own test cases.</i></p>
+
+<h2>Submit</h2>
+
+For this project you will need to submit a file named <tt>wordchains.c</tt> and, optionally, any of the ADTs named <tt>Graph,WGraph,stack,queue</tt> that your program is using, even if you have not changed them. You can either submit through WebCMS3 or use a command line. For example, if your program uses the <tt>Graph</tt> ADT and the <tt>queue</tt> ADT, then you should submit:
+<pre class="command_line"><kbd class="shell">give cs9024 assn2 wordchains.c Graph.h Graph.c queue.h queue.c</kbd>
+</pre>
+<p></p>
+<p>Do not forget to add the time complexity to your main source code file <tt>wordchains.c</tt>.
+</p>
+You can submit as many times as you like — later submissions will overwrite earlier ones. You can check that your submission has been received on WebCMS3 or by using the following command:
+<pre class="command_line"><kbd class="shell">9024 classrun -check assn2</kbd>
+</pre>
+<p></p>
+
+<h2>Marking</h2>
+
+<p>This project will be marked on functionality in the first instance, so it is very important that the output of your program be <b><i>exactly</i></b> correct as shown in the examples above. Submissions which score very low on the automarking will be looked at by a human and may receive a few marks, provided the code is well-structured and commented.</p>
+
+<p>Programs that generate compilation errors will receive a very low mark, no matter what other virtues they may have. In general, a program that attempts a substantial part of the job and does that part correctly will receive more marks than one attempting to do the entire job but with many errors.</p>
+
+<p>Style considerations include: readability, structured programming and good commenting.</p>
+
+<h2>Plagiarism</h2>
+
+<p>Group submissions will not be allowed. Your program must be entirely your own work. Plagiarism detection software will be used to compare all submissions pairwise (including submissions for similar projects in previous years, if applicable) and serious penalties will be applied, particularly in the case of repeat offences.</p>
+
+<p><b><i>Do not copy from others; do not allow anyone to see your code, not even after the deadline</i></b></p>
+
+<p>Please refer to the on-line sources to help you understand what plagiarism is and how it is dealt with at UNSW:</p>
+<ul>
+	<li><a href="https://student.unsw.edu.au/plagiarism">Plagiarism and Academic Integrity</a></li>
+	<li><a href="https://www.gs.unsw.edu.au/policy/documents/plagiarismprocedure.pdf">UNSW Plagiarism Procedure</a></li>
+</ul>
+
+<h2>Help</h2>
+
+See <a href="http://www.cse.unsw.edu.au/~cs9024/17s2/assn/assn2/faq.php">FAQ</a> for some hints on how to get started.
+
+<h2>Finally …</h2>
+
+Best of luck and have fun! Michael
+
+
+
+</body></html>

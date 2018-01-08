@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="asx@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>12411</ObjectId>
+    </database>
+    <database id="3" parent="1" name="beers">
+      <ObjectId>98579</ObjectId>
+    </database>
+    <database id="4" parent="1" name="asx">
+      <ObjectId>163930</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="5" parent="4" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-09-14.23:44:25.072</IntrospectionTimestamp>
+      <IntrospectionStateNumber>39628</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="6" parent="4" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="7" parent="4" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="8" parent="4" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+    </schema>
+    <schema id="9" parent="4" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+    </schema>
+    <schema id="10" parent="4" name="information_schema">
+      <ObjectId>12119</ObjectId>
+    </schema>
+    <table id="11" parent="5" name="asx">
+      <ObjectId>164125</ObjectId>
+      <StateNumber>39598</StateNumber>
+    </table>
+    <table id="12" parent="5" name="asxlog">
+      <ObjectId>164150</ObjectId>
+      <StateNumber>27604</StateNumber>
+    </table>
+    <table id="13" parent="5" name="category">
+      <ObjectId>164113</ObjectId>
+      <StateNumber>27601</StateNumber>
+    </table>
+    <table id="14" parent="5" name="company">
+      <ObjectId>164089</ObjectId>
+      <StateNumber>27604</StateNumber>
+    </table>
+    <table id="15" parent="5" name="executive">
+      <ObjectId>164100</ObjectId>
+      <StateNumber>39593</StateNumber>
+    </table>
+    <table id="16" parent="5" name="rating">
+      <ObjectId>164140</ObjectId>
+      <StateNumber>27603</StateNumber>
+    </table>
+    <view id="17" parent="5" name="avgcprating">
+      <ObjectId>164207</ObjectId>
+      <StateNumber>39618</StateNumber>
+    </view>
+    <view id="18" parent="5" name="q1">
+      <ObjectId>164167</ObjectId>
+      <StateNumber>39608</StateNumber>
+    </view>
+    <view id="19" parent="5" name="q10">
+      <ObjectId>164203</ObjectId>
+      <StateNumber>39617</StateNumber>
+    </view>
+    <view id="20" parent="5" name="q11">
+      <ObjectId>164211</ObjectId>
+      <StateNumber>39619</StateNumber>
+    </view>
+    <view id="21" parent="5" name="q12">
+      <ObjectId>164215</ObjectId>
+      <StateNumber>39620</StateNumber>
+    </view>
+    <view id="22" parent="5" name="q13">
+      <ObjectId>164219</ObjectId>
+      <StateNumber>39621</StateNumber>
+    </view>
+    <view id="23" parent="5" name="q14">
+      <ObjectId>164223</ObjectId>
+      <StateNumber>39622</StateNumber>
+    </view>
+    <view id="24" parent="5" name="q15">
+      <ObjectId>164227</ObjectId>
+      <StateNumber>39623</StateNumber>
+    </view>
+    <view id="25" parent="5" name="q2">
+      <ObjectId>164171</ObjectId>
+      <StateNumber>39609</StateNumber>
+    </view>
+    <view id="26" parent="5" name="q3">
+      <ObjectId>164175</ObjectId>
+      <StateNumber>39610</StateNumber>
+    </view>
+    <view id="27" parent="5" name="q4">
+      <ObjectId>164179</ObjectId>
+      <StateNumber>39611</StateNumber>
+    </view>
+    <view id="28" parent="5" name="q5">
+      <ObjectId>164183</ObjectId>
+      <StateNumber>39612</StateNumber>
+    </view>
+    <view id="29" parent="5" name="q6">
+      <ObjectId>164187</ObjectId>
+      <StateNumber>39613</StateNumber>
+    </view>
+    <view id="30" parent="5" name="q7">
+      <ObjectId>164191</ObjectId>
+      <StateNumber>39614</StateNumber>
+    </view>
+    <view id="31" parent="5" name="q8">
+      <ObjectId>164195</ObjectId>
+      <StateNumber>39615</StateNumber>
+    </view>
+    <view id="32" parent="5" name="q9">
+      <ObjectId>164199</ObjectId>
+      <StateNumber>39616</StateNumber>
+    </view>
+    <view id="33" parent="5" name="sector_gain">
+      <ObjectId>164235</ObjectId>
+      <StateNumber>39626</StateNumber>
+    </view>
+    <routine id="34" parent="5" name="q16_insert">
+      <ObjectId>164231</ObjectId>
+      <StateNumber>39624</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ResultsDefinition>trigger</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <routine id="35" parent="5" name="q16_update">
+      <ObjectId>164233</ObjectId>
+      <StateNumber>39625</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ResultsDefinition>trigger</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <routine id="36" parent="5" name="q17_function">
+      <ObjectId>164239</ObjectId>
+      <StateNumber>39627</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ResultsDefinition>trigger</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <routine id="37" parent="5" name="q18_function">
+      <ObjectId>164241</ObjectId>
+      <StateNumber>39628</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ResultsDefinition>trigger</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <column id="38" parent="11" name="Date">
+      <Position>1</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27602</StateNumber>
+    </column>
+    <column id="39" parent="11" name="code">
+      <Position>2</Position>
+      <DataType>char(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27602</StateNumber>
+    </column>
+    <column id="40" parent="11" name="volume">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27602</StateNumber>
+    </column>
+    <column id="41" parent="11" name="price">
+      <Position>4</Position>
+      <DataType>numeric|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27602</StateNumber>
+    </column>
+    <index id="42" parent="11" name="asx_pkey">
+      <ObjectId>164133</ObjectId>
+      <ColNames>Date
+code</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="43" parent="11" name="asx_pkey">
+      <ObjectId>164134</ObjectId>
+      <ColNames>Date
+code</ColNames>
+      <UnderlyingIndexName>asx_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="44" parent="11" name="asx_code_fkey">
+      <ObjectId>164135</ObjectId>
+      <ColNames>code</ColNames>
+      <RefTableId>164089</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>company</RefTableName>
+      <RefKeyName>company_pkey</RefKeyName>
+      <RefColNames>code</RefColNames>
+    </foreign-key>
+    <check id="45" parent="11" name="asx_volume_check">
+      <ObjectId>164128</ObjectId>
+      <ColNames>volume</ColNames>
+      <Predicate>volume &gt;= 0</Predicate>
+    </check>
+    <check id="46" parent="11" name="asx_price_check">
+      <ObjectId>164129</ObjectId>
+      <ColNames>price</ColNames>
+      <Predicate>price &gt; 0.0</Predicate>
+    </check>
+    <trigger id="47" parent="11" name="q17">
+      <ObjectId>164240</ObjectId>
+      <StateNumber>39596</StateNumber>
+      <Turn>after-row</Turn>
+      <Events>I</Events>
+      <FireMode>origin</FireMode>
+      <CallRoutineId>164239</CallRoutineId>
+    </trigger>
+    <trigger id="48" parent="11" name="q18">
+      <ObjectId>164242</ObjectId>
+      <StateNumber>39598</StateNumber>
+      <Turn>before-row</Turn>
+      <Events>U</Events>
+      <FireMode>origin</FireMode>
+      <CallRoutineId>164241</CallRoutineId>
+    </trigger>
+    <column id="49" parent="12" name="Timestamp">
+      <Position>1</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27604</StateNumber>
+    </column>
+    <column id="50" parent="12" name="Date">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27604</StateNumber>
+    </column>
+    <column id="51" parent="12" name="code">
+      <Position>3</Position>
+      <DataType>char(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27604</StateNumber>
+    </column>
+    <column id="52" parent="12" name="oldvolume">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27604</StateNumber>
+    </column>
+    <column id="53" parent="12" name="oldprice">
+      <Position>5</Position>
+      <DataType>numeric|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27604</StateNumber>
+    </column>
+    <index id="54" parent="12" name="asxlog_pkey">
+      <ObjectId>164158</ObjectId>
+      <ColNames>Timestamp
+Date
+code</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="55" parent="12" name="asxlog_pkey">
+      <ObjectId>164159</ObjectId>
+      <ColNames>Timestamp
+Date
+code</ColNames>
+      <UnderlyingIndexName>asxlog_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="56" parent="12" name="asxlog_code_fkey">
+      <ObjectId>164160</ObjectId>
+      <ColNames>code</ColNames>
+      <RefTableId>164089</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>company</RefTableName>
+      <RefKeyName>company_pkey</RefKeyName>
+      <RefColNames>code</RefColNames>
+    </foreign-key>
+    <check id="57" parent="12" name="asxlog_oldvolume_check">
+      <ObjectId>164153</ObjectId>
+      <ColNames>oldvolume</ColNames>
+      <Predicate>oldvolume &gt;= 0</Predicate>
+    </check>
+    <check id="58" parent="12" name="asxlog_oldprice_check">
+      <ObjectId>164154</ObjectId>
+      <ColNames>oldprice</ColNames>
+      <Predicate>oldprice &gt; 0.0</Predicate>
+    </check>
+    <column id="59" parent="13" name="code">
+      <Position>1</Position>
+      <DataType>char(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27601</StateNumber>
+    </column>
+    <column id="60" parent="13" name="sector">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <StateNumber>27601</StateNumber>
+      <DefaultExpression>NULL::character varying</DefaultExpression>
+    </column>
+    <column id="61" parent="13" name="industry">
+      <Position>3</Position>
+      <DataType>varchar(80)|0</DataType>
+      <StateNumber>27601</StateNumber>
+      <DefaultExpression>NULL::character varying</DefaultExpression>
+    </column>
+    <index id="62" parent="13" name="category_pkey">
+      <ObjectId>164118</ObjectId>
+      <ColNames>code</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="63" parent="13" name="category_pkey">
+      <ObjectId>164119</ObjectId>
+      <ColNames>code</ColNames>
+      <UnderlyingIndexName>category_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="64" parent="13" name="category_code_fkey">
+      <ObjectId>164120</ObjectId>
+      <ColNames>code</ColNames>
+      <RefTableId>164089</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>company</RefTableName>
+      <RefKeyName>company_pkey</RefKeyName>
+      <RefColNames>code</RefColNames>
+    </foreign-key>
+    <column id="65" parent="14" name="code">
+      <Position>1</Position>
+      <DataType>char(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27599</StateNumber>
+    </column>
+    <column id="66" parent="14" name="name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27599</StateNumber>
+    </column>
+    <column id="67" parent="14" name="address">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>27599</StateNumber>
+    </column>
+    <column id="68" parent="14" name="zip">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <StateNumber>27599</StateNumber>
+      <DefaultExpression>NULL::character varying</DefaultExpression>
+    </column>
+    <column id="69" parent="14" name="country">
+      <Position>5</Position>
+      <DataType>varchar(40)|0</DataType>
+      <StateNumber>27599</StateNumber>
+      <DefaultExpression>NULL::character varying</DefaultExpression>
+    </column>
+    <index id="70" parent="14" name="company_pkey">
+      <ObjectId>164098</ObjectId>
+      <ColNames>code</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="71" parent="14" name="company_pkey">
+      <ObjectId>164099</ObjectId>
+      <ColNames>code</ColNames>
+      <UnderlyingIndexName>company_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <check id="72" parent="14" name="company_code_check">
+      <ObjectId>164094</ObjectId>
+      <ColNames>code</ColNames>
+      <Predicate>code ~ &apos;[A-Z]{3}&apos;::text</Predicate>
+    </check>
+    <column id="73" parent="15" name="code">
+      <Position>1</Position>
+      <DataType>char(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27600</StateNumber>
+    </column>
+    <column id="74" parent="15" name="person">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>27600</StateNumber>
+    </column>
+    <index id="75" parent="15" name="executive_pkey">
+      <ObjectId>164106</ObjectId>
+      <ColNames>code
+person</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="76" parent="15" name="executive_pkey">
+      <ObjectId>164107</ObjectId>
+      <ColNames>code
+person</ColNames>
+      <UnderlyingIndexName>executive_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="77" parent="15" name="executive_code_fkey">
+      <ObjectId>164108</ObjectId>
+      <ColNames>code</ColNames>
+      <RefTableId>164089</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>company</RefTableName>
+      <RefKeyName>company_pkey</RefKeyName>
+      <RefColNames>code</RefColNames>
+    </foreign-key>
+    <trigger id="78" parent="15" name="q16_ins">
+      <ObjectId>164232</ObjectId>
+      <StateNumber>39591</StateNumber>
+      <Turn>before-row</Turn>
+      <Events>I</Events>
+      <FireMode>origin</FireMode>
+      <CallRoutineId>164231</CallRoutineId>
+    </trigger>
+    <trigger id="79" parent="15" name="q16_updt">
+      <ObjectId>164234</ObjectId>
+      <StateNumber>39593</StateNumber>
+      <Turn>before-row</Turn>
+      <Events>U</Events>
+      <FireMode>origin</FireMode>
+      <CallRoutineId>164233</CallRoutineId>
+    </trigger>
+    <column id="80" parent="16" name="code">
+      <Position>1</Position>
+      <DataType>char(3)|0</DataType>
+      <StateNumber>27603</StateNumber>
+    </column>
+    <column id="81" parent="16" name="star">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>27603</StateNumber>
+      <DefaultExpression>3</DefaultExpression>
+    </column>
+    <foreign-key id="82" parent="16" name="rating_code_fkey">
+      <ObjectId>164145</ObjectId>
+      <ColNames>code</ColNames>
+      <RefTableId>164089</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>company</RefTableName>
+      <RefKeyName>company_pkey</RefKeyName>
+      <RefColNames>code</RefColNames>
+    </foreign-key>
+    <check id="83" parent="16" name="rating_star_check">
+      <ObjectId>164144</ObjectId>
+      <ColNames>star</ColNames>
+      <Predicate>(star &gt; 0) AND (star &lt; 6)</Predicate>
+    </check>
+    <column id="84" parent="17" name="code">
+      <Position>1</Position>
+      <DataType>char(3)|0</DataType>
+      <StateNumber>39584</StateNumber>
+    </column>
+    <column id="85" parent="17" name="avgcompanyrating">
+      <Position>2</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39584</StateNumber>
+    </column>
+    <column id="86" parent="18" name="name">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>39574</StateNumber>
+    </column>
+    <column id="87" parent="18" name="country">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <StateNumber>39574</StateNumber>
+    </column>
+    <column id="88" parent="19" name="code">
+      <Position>1</Position>
+      <DataType>char(3)|0</DataType>
+      <StateNumber>39583</StateNumber>
+    </column>
+    <column id="89" parent="19" name="industry">
+      <Position>2</Position>
+      <DataType>varchar(80)|0</DataType>
+      <StateNumber>39583</StateNumber>
+    </column>
+    <column id="90" parent="20" name="sector">
+      <Position>1</Position>
+      <DataType>varchar(40)|0</DataType>
+      <StateNumber>39585</StateNumber>
+    </column>
+    <column id="91" parent="20" name="avgrating">
+      <Position>2</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39585</StateNumber>
+    </column>
+    <column id="92" parent="21" name="name">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>39586</StateNumber>
+    </column>
+    <column id="93" parent="22" name="code">
+      <Position>1</Position>
+      <DataType>char(3)|0</DataType>
+      <StateNumber>39587</StateNumber>
+    </column>
+    <column id="94" parent="22" name="name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>39587</StateNumber>
+    </column>
+    <column id="95" parent="22" name="address">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>39587</StateNumber>
+    </column>
+    <column id="96" parent="22" name="zip">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <StateNumber>39587</StateNumber>
+    </column>
+    <column id="97" parent="22" name="sector">
+      <Position>5</Position>
+      <DataType>varchar(40)|0</DataType>
+      <StateNumber>39587</StateNumber>
+    </column>
+    <column id="98" parent="23" name="code">
+      <Position>1</Position>
+      <DataType>char(3)|0</DataType>
+      <StateNumber>39588</StateNumber>
+    </column>
+    <column id="99" parent="23" name="beginprice">
+      <Position>2</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39588</StateNumber>
+    </column>
+    <column id="100" parent="23" name="endprice">
+      <Position>3</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39588</StateNumber>
+    </column>
+    <column id="101" parent="23" name="change">
+      <Position>4</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39588</StateNumber>
+    </column>
+    <column id="102" parent="23" name="gain">
+      <Position>5</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39588</StateNumber>
+    </column>
+    <column id="103" parent="24" name="code">
+      <Position>1</Position>
+      <DataType>char(3)|0</DataType>
+      <StateNumber>39589</StateNumber>
+    </column>
+    <column id="104" parent="24" name="minprice">
+      <Position>2</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39589</StateNumber>
+    </column>
+    <column id="105" parent="24" name="avgprice">
+      <Position>3</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39589</StateNumber>
+    </column>
+    <column id="106" parent="24" name="maxprice">
+      <Position>4</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39589</StateNumber>
+    </column>
+    <column id="107" parent="24" name="mindaygain">
+      <Position>5</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39589</StateNumber>
+    </column>
+    <column id="108" parent="24" name="avgdaygain">
+      <Position>6</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39589</StateNumber>
+    </column>
+    <column id="109" parent="24" name="maxdaygain">
+      <Position>7</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39589</StateNumber>
+    </column>
+    <column id="110" parent="25" name="code">
+      <Position>1</Position>
+      <DataType>char(3)|0</DataType>
+      <StateNumber>39575</StateNumber>
+    </column>
+    <column id="111" parent="26" name="name">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>39576</StateNumber>
+    </column>
+    <column id="112" parent="27" name="sector">
+      <Position>1</Position>
+      <DataType>varchar(40)|0</DataType>
+      <StateNumber>39577</StateNumber>
+    </column>
+    <column id="113" parent="27" name="number">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>39577</StateNumber>
+    </column>
+    <column id="114" parent="28" name="name">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>39578</StateNumber>
+    </column>
+    <column id="115" parent="29" name="name">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>39579</StateNumber>
+    </column>
+    <column id="116" parent="30" name="Date">
+      <Position>1</Position>
+      <DataType>date|0</DataType>
+      <StateNumber>39580</StateNumber>
+    </column>
+    <column id="117" parent="30" name="code">
+      <Position>2</Position>
+      <DataType>char(3)|0</DataType>
+      <StateNumber>39580</StateNumber>
+    </column>
+    <column id="118" parent="30" name="volume">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>39580</StateNumber>
+    </column>
+    <column id="119" parent="30" name="prevprice">
+      <Position>4</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39580</StateNumber>
+    </column>
+    <column id="120" parent="30" name="price">
+      <Position>5</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39580</StateNumber>
+    </column>
+    <column id="121" parent="30" name="change">
+      <Position>6</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39580</StateNumber>
+    </column>
+    <column id="122" parent="30" name="gain">
+      <Position>7</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39580</StateNumber>
+    </column>
+    <column id="123" parent="31" name="Date">
+      <Position>1</Position>
+      <DataType>date|0</DataType>
+      <StateNumber>39581</StateNumber>
+    </column>
+    <column id="124" parent="31" name="code">
+      <Position>2</Position>
+      <DataType>char(3)|0</DataType>
+      <StateNumber>39581</StateNumber>
+    </column>
+    <column id="125" parent="31" name="volume">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>39581</StateNumber>
+    </column>
+    <column id="126" parent="32" name="sector">
+      <Position>1</Position>
+      <DataType>varchar(40)|0</DataType>
+      <StateNumber>39582</StateNumber>
+    </column>
+    <column id="127" parent="32" name="industry">
+      <Position>2</Position>
+      <DataType>varchar(80)|0</DataType>
+      <StateNumber>39582</StateNumber>
+    </column>
+    <column id="128" parent="32" name="number">
+      <Position>3</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>39582</StateNumber>
+    </column>
+    <column id="129" parent="33" name="sector">
+      <Position>1</Position>
+      <DataType>varchar(40)|0</DataType>
+      <StateNumber>39594</StateNumber>
+    </column>
+    <column id="130" parent="33" name="Date">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+      <StateNumber>39594</StateNumber>
+    </column>
+    <column id="131" parent="33" name="code">
+      <Position>3</Position>
+      <DataType>char(3)|0</DataType>
+      <StateNumber>39594</StateNumber>
+    </column>
+    <column id="132" parent="33" name="gain">
+      <Position>4</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>39594</StateNumber>
+    </column>
+    <argument id="133" parent="34">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>trigger|0</DataType>
+    </argument>
+    <argument id="134" parent="35">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>trigger|0</DataType>
+    </argument>
+    <argument id="135" parent="36">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>trigger|0</DataType>
+    </argument>
+    <argument id="136" parent="37">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>trigger|0</DataType>
+    </argument>
+  </database-model>
+</dataSource>

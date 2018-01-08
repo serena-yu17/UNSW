@@ -1,0 +1,157 @@
+.toggle-slide {
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  direction: ltr;
+}
+.toggle-slide .toggle-on, .toggle-slide .toggle-pending, .toggle-slide .toggle-off,.toggle-slide .toggle-blob {
+    float: left;
+}
+.toggle-slide .toggle-blob {
+    position: relative;
+    cursor: hand;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.toggle-light .toggle-slide {
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  border-radius: 9999px;
+  box-shadow: 0 0 0 1px #999;
+}
+.toggle-light .toggle-slide .toggle-on,.toggle-light .toggle-slide .toggle-pending,.toggle-light .toggle-slide .toggle-off,.toggle-light .toggle-slide .toggle-blob {
+  font-size: 11px;
+  font-weight: 500;
+}
+.toggle-light .toggle-slide .toggle-on, .toggle-light .toggle-select .toggle-inner .active {
+  background: rgb(69,163,31);
+  /*
+  box-shadow: inset 2px 2px 6px rgba(0,0,0,0.2);
+  */
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
+  color: rgba(255,255,255, 0.8);
+}
+.toggle-light .toggle-slide .toggle-pending {
+  background: #f18a41;
+  /*
+  box-shadow: inset 2px 2px 6px rgba(0,0,0,0.2);
+  */
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
+  color: rgba(255,255,255, 0.8);
+}
+.toggle-light .toggle-slide .toggle-off, .toggle-light .toggle-select .toggle-on, .toggle-light .toggle-select .toggle-pending {
+  color: rgba(0,0,0,0.6);
+  text-shadow: 0 1px rgba(255,255,255,0.2);
+  background: #cfcfcf;
+  /*
+  background: -moz-linear-gradient(top,  #cfcfcf 0%, #f5f5f5 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cfcfcf), color-stop(100%,#f5f5f5));
+  background: -webkit-linear-gradient(top,  #cfcfcf 0%,#f5f5f5 100%);
+  background: -o-linear-gradient(top,  #cfcfcf 0%,#f5f5f5 100%);
+  background: -ms-linear-gradient(top,  #cfcfcf 0%,#f5f5f5 100%);
+  background: linear-gradient(to bottom,  #cfcfcf 0%,#f5f5f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfcfcf', endColorstr='#f5f5f5',GradientType=0 );
+  */
+}
+.toggle-light.toggle-red .toggle-slide .toggle-off, .toggle-light .toggle-select .toggle-on, .toggle-light .toggle-select .toggle-pending {
+  font-weight: bold;
+}
+.toggle-light.toggle-red .toggle-slide .toggle-off {
+  color: rgb(163,69,31);
+  font-weight: bold;
+}
+.toggle-light .toggle-slide .toggle-blob {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  background: #dfdfdf;
+  /*
+  background: -moz-linear-gradient(bottom,  #cfcfcf 0%, #f5f5f5 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#cfcfcf), color-stop(100%,#f5f5f5));
+  background: -webkit-linear-gradient(bottom,  #cfcfcf 0%,#f5f5f5 100%);
+  background: -o-linear-gradient(bottom,  #cfcfcf 0%,#f5f5f5 100%);
+  background: -ms-linear-gradient(bottom,  #cfcfcf 0%,#f5f5f5 100%);
+  background: linear-gradient(to top,  #cfcfcf 0%,#f5f5f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfcfcf', endColorstr='#f5f5f5',GradientType=0 );
+  */
+
+  box-shadow: 1px 1px 2px #888;
+}
+.toggle-light .toggle-slide .toggle-blob:hover {
+  background: #f4f4f4;
+  /*
+  background: -moz-linear-gradient(top,  #e4e4e4 0%, #f9f9f9 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4e4e4), color-stop(100%,#f9f9f9));
+  background: -webkit-linear-gradient(top,  #e4e4e4 0%,#f9f9f9 100%);
+  background: -o-linear-gradient(top,  #e4e4e4 0%,#f9f9f9 100%);
+  background: -ms-linear-gradient(top,  #e4e4e4 0%,#f9f9f9 100%);
+  background: linear-gradient(to bottom,  #e4e4e4 0%,#f9f9f9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4e4e4', endColorstr='#f9f9f9',GradientType=0 );
+  */
+}
+
+
+.toggle-page-edit .toggle-slide {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.toggle-page-edit .toggle-slide .toggle-on,.toggle-page-edit .toggle-slide .toggle-pending,.toggle-page-edit .toggle-slide .toggle-off,.toggle-page-edit .toggle-slide .toggle-blob {
+  font-size: 13px;
+  font-weight: 500;
+}
+.toggle-page-edit .toggle-slide .toggle-on,.toggle-page-edit .toggle-slide .toggle-pending, .toggle-page-edit .toggle-select .toggle-inner .active {
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 1px rgba(255,255,255,0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+.toggle-page-edit .toggle-slide .toggle-off, .toggle-page-edit .toggle-select .toggle-on, .toggle-page-edit .toggle-select .toggle-pending {
+  color: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.0);
+  border: 1px solid rgba(0,0,0,0.1);
+
+  -webkit-transition: all 0.2s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+          transition: all 0.2s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+  /*color: rgba(0,0,0,0.85);*/
+}
+.toggle-page-edit .toggle-select .toggle-on, .toggle-page-edit .toggle-select .toggle-pending {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+.toggle-page-edit .toggle-slide .toggle-off {
+}
+
+.toggle-page-edit .toggle-select .toggle-on:hover, .toggle-page-edit .toggle-select .toggle-pending:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.toggle-page-edit .toggle-slide .toggle-off:hover {  
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.toggle-page-edit .toggle-select .toggle-on.active:hover, .toggle-page-edit .toggle-select .toggle-pending.active:hover {
+  background: rgba(0, 0, 0, 0.2);
+  cursor: default;
+}
+
+.toggle-page-edit .toggle-slide .toggle-off.active:hover {  
+  background: rgba(0, 0, 0, 0.2);
+  cursor: default;
+}
+
+.toggle-page-edit .toggle-slide .toggle-blob {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background: #dfdfdf;
+  /*box-shadow: 1px 1px 2px #888;*/
+}
+.toggle-page-edit .toggle-slide .toggle-blob:hover {
+  background: #f4f4f4;
+}

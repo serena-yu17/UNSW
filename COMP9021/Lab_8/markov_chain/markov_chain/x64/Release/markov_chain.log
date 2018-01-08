@@ -1,0 +1,9 @@
+﻿  stdafx.cpp
+  markovchain.cpp
+markovchain.cpp(101): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+markovchain.cpp(122): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating code
+  All 641 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  markov_chain.vcxproj -> C:\OneDrive\UNSW\COMP9021\Lab_8\markov_chain\x64\Release\markov_chain.exe
+  markov_chain.vcxproj -> C:\OneDrive\UNSW\COMP9021\Lab_8\markov_chain\x64\Release\markov_chain.pdb (Full PDB)

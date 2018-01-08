@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0067)https://www.cse.unsw.edu.au/~cs9311/17s2/assignments/a1/design.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>COMP9311 17s2 - Assignment 1 (Stage 2)</title>
+<!--
+<link rel='stylesheet' type='text/css' href='http://www.cse.unsw.edu.au/~cs9311/17s2/9311.css'>
+-->
+
+<style>
+body {font-size:11pt;font-family:arial,sans-serif;margin:5px 10px;}
+a {color:#3333CC;text-decoration:none;}
+a[href]:hover {color:#CC0000;background:#FFFFCC;}
+h2 {color:#99BB55;}
+small {font-size:75%}
+pre {background:#EEEEFF;border:thin solid #9999CC;margin:5px 20px 5px 20px;padding:4px 8px;}
+span.toggle {font-size:67%;}
+span.notice {font-size:110%;}
+span.tiny {font-size:75%;font-weight:normal;}
+span.heading {font-size:18pt;font-weight:bold;color:#99BB55;}
+span.marks {font-weight:normal;font-size:75%;}
+span.identifier {color:#993300;font-size:110%;font-weight:bold;font-family:courier;}
+tr.heading {font-size:large;font-weight:bold;background-color:#AACC66;}
+table.note {border:thin solid black;padding:2pt;width:75%}
+div.note {border:thin solid black;font-size:90%;margin:5px 60px 5px 60px;padding:4px 8px;}
+dt.item {font-weight:bold;}
+.red {color:#CC0000;}
+.green {color:#006600;}
+.brown {color:#993300;}
+.grey {color:#CCCCCC;}
+.comment {font-size:90%;color:#666666}
+.important {font-weight:bold;color:#CC0000;}
+.bigQ {font-size:13pt;font-style:italic;}
+
+</style>
+
+</head>
+
+<body>
+
+<div align="center">
+ <table width="100%" border="0">
+  <tbody><tr valign="top">
+   <td align="left" width="25%">
+    <span class="tiny"><a href="http://www.cse.unsw.edu.au/~cs9311">COMP9311 17s2</a></span>
+   </td>
+   <td align="center" width="50%">
+    <span class="heading">Assignment 1 (Stage 2)</span><br><b></b>
+   </td>
+   <td align="right" width="25%">
+    <span class="tiny"><a href="http://www.cse.unsw.edu.au/~cs9311">Database Systems</a></span>
+   </td>
+ </tr></tbody></table>
+</div>
+
+<div style="text-align:center;font-size:80%;color:#555555;margin-top:5px;">
+Last updated: <b>Sunday 13th August 2017</b> <br>
+Most recent changes will be shown in <span class="red">red</span>. <br>
+</div>
+
+<h2>Introduction</h2>
+
+This document contains the completed ER design for Stage 2 of Assignment 1.
+You must convert this design into a PostgreSQL relational schema
+(i.e., a collection of <code>create table</code> statements) and submit
+it via the give command.
+When converting from the ER design to a relational
+schema, you should follow the approach given in the lecture notes
+on <q>ER to Relational Mapping</q>. You may need to investigate and/or
+derive mappings for the constructs that have not been discussed in 
+the lecture.
+
+<h3>Submission</h3>
+<p>
+<b>Submission</b>: &nbsp; Login to a CSE Linux machine such as <tt>wagner</tt>
+and use the give command below to submit the assignment (note that the give command does not work on <tt>grieg</tt>):
+</p><p><b><tt>give cs9311 a1 a1.sql</tt></b>
+</p>
+<p>
+<b>Deadline</b>: &nbsp; Friday 25th August 2017 @ 23:59
+</p>
+<p>
+<b>Late Penalty</b>: &nbsp; 
+Late submissions will attract a 10% penalty for each day.
+</p>
+
+<b>Notes</b>: For fairness to all students in the class, no special considerations will be given to those:
+<ul>
+<li> who claim to have submitted their assignment but the assignment has not been received by the give system above (use the "classrun" command to check if your assignment has been submitted, e.g., "9311 classrun -check a1");
+</li><li> who submit their assignment a few minutes late and request to be considered as non-late submissions (please do submit your assignment early in case of your network connection problem, computer breakdown, etc);
+</li><li> who claim that their assignments worked perfectly on their home computers but somehow did not work on CSE Linux machines (we will only test and mark your assignments on CSE Linux machines, and will not consider the results on your own machines. Hence, please test your assignments on CSE Linux machines before submission).
+</li></ul>
+
+<h2>Submission Requirements</h2>
+
+<p>
+The schema that you will submit will be marked by a program (auto-marked).
+In order for the program to recognise what you have done as being correct,
+your SQL <b>must adhere to the following requirements</b>:
+</p>
+<ul>
+<li> all tables must have an appropriate primary key defined and all foreign keys must be identified
+</li><li> use appropriate domains for each attribute (e.g., date should be defined using an SQL <tt>date</tt>; a counter would be done as an SQL <tt>integer</tt> constrained to be &#8805; 0)
+</li><li> if an attribute is a string, and no maximum length is specified,
+	use PostgreSQL's (non-standard) <tt>text</tt> type; otherwise,
+	use an appropriate type such as <tt>varchar(N)</tt> type or one of the supplied
+	domain types; if appropriate, you can also create new domain types.
+</li><li> if an attribute is a boolean value, use the SQL <tt>boolean</tt> type
+</li><li> wherever possible, not-null, unique and domain constraints
+	must be used to enforce constraints implied by the ER design
+</li><li> derived (computed) attributes should not be included in the SQL schema
+</li><li> wherever possible, participation constraints should be implemented
+	using the appropriate SQL constructs
+</li><li> map all of the entity class hierarchies in the ER design using the 
+	<b>ER-style</b> mapping (i.e., one table for each entity class).
+</li><li> all relationships should be mapped using the approaches described
+	in the lecture notes; in particular, you should avoid
+	<q>over-generalising</q> your SQL schema relative to the
+	ER design (e.g., a 1:n relationship should <em>not</em> be mapped in
+	such a way that it can actually be used to form an n:m relationship)
+</li></ul>
+<p>
+Since the assignment is going to be auto-marked, you must use the names that the auto-marker expects (i.e., the same names that are used in the provided ER design.  
+Please also follow the following naming conventions:
+</p><p>
+</p><ul>
+<li> when mapping multi-valued attributes, the new table's name is the
+	concatenation of the entity and attribute names
+</li><li> when mapping composite attributes, use the names of the "leaf" attributes
+</li><li> if names in the ER diagram contain multiple words (just in case, though I believe that I have concatenated them already), concatenate them
+	into a single word in
+	<a href="http://en.wikipedia.org/wiki/CamelCase"><tt>CamelCase</tt></a>
+	in the SQL schema. 
+</li></ul>
+<p>
+Note: if the name you want to use clashes with a PostgreSQL keyword
+	(e.g. <tt>user</tt>), you will need to write the name in double-quotes
+	(i.e. <tt>"user"</tt>) and in all lower-case.
+</p>
+<p>
+Place the schema in a file called <b><tt>a1.sql</tt></b>
+and submit it via the <tt>give</tt> command (see above) before the deadline.
+To give you a head-start, a <a href="https://www.cse.unsw.edu.au/~cs9311/17s2/assignments/a1/a1template.sql">template</a>
+for the schema is available, which has (parts of) some
+of the required tables already defined.
+Note that you will need to add more tables, as well as filling
+out the attributes in the supplied tables.
+Your submission must follow this format, so save a copy of this
+and edit it to produce your own <tt>a1.sql</tt> file.
+</p>
+<p>
+The reason for insisting on strict conformance to the above is that
+your submission will be auto-marked as follows:
+</p>
+<ul>
+<li> we will create an initially empty database (no tables, etc.)
+</li><li> we will load your schema into this database
+</li><li> we will use a script program to compare your schema with the expected schema
+</li></ul>
+<p>
+The comparison will make use of the meta-data which has been added to
+the database by loading your schema. Needless to say, if your schema has
+load-time errors, then it is not going to be possible to compare it
+against the correct version.
+Therefore, it is essential that you check that your schema can load
+into an <em>initially empty</em> database before you submit it.
+</p>
+<p>
+Following the instructions above is considered to be
+a requirement of this assignment.
+If you stray from the expected schema, your submission will
+be marked as incorrect.
+Our auto-checking scripts have a little flexibility, but not
+much, so don't rely on it. Manual checking is to examine specific implementations that are difficult to be auto-checked, and it is not an alternative to override the results from auto-marking.
+</p>
+<p>
+Please don't try to second-guess or <q>improve</q> the given ER design below.
+Even if you think it can be further improved, just translate it as given.
+If you still think that it is incorrect or that the information supplied is not enough
+to do the mapping unambiguously, either send me an email or post a message on
+the course website Forums (section: <q>Assignment 1 (Stage 2)</q>).
+</p>
+
+<h2>The ER Design</h2>
+<p>
+This ER design gives one possible data model for the <tt>OzCars</tt> application introduced in the first stage of this assignment.
+The design presented here is based on the discussions during Weeks 2 and 3 lectures.
+</p>
+<p>
+To make the presentation clearer, the design is broken into a number of sections.
+</p>
+<p>
+Other notational conventions in the ER diagrams:
+</p>
+<ul>
+<li> primary key attributes for entities are underlined
+</li><li> total participation in a relationship is indicated by a thick line
+</li><li> an arrow indicates that at most 1 entity is involved in the relationship
+</li></ul>
+
+<h3 class="entity">Data Types</h3>
+<p>
+To make things easier, I have defined some useful data types using the
+<a href="https://www.postgresql.org/docs/current/static/sql-createdomain.html">
+<tt>create domain</tt></a> statement.
+Some of the <tt>create domain</tt> statements use standard SQL patterns
+for specifying constraints, while others use PostgreSQL-specific
+regular expressions for this purpose.
+The domain definitions are given at the top of the
+<a href="https://www.cse.unsw.edu.au/~cs9311/17s2/assignments/a1/a1template.sql">template file</a>.
+
+
+</p><h3 class="entity">Employee</h3>
+<p>
+The following diagram shows the entities, attributes and relationships
+that provide the information about the employee entity for OzCars.
+</p>
+<div align="center"><img src="./COMP9311 17s2 - Assignment 1 (Stage 2)_files/employee.png"></div>
+<p>Details:</p>
+<ul>
+<li> we use a system-generated, numeric EID as a primary key, since Salesman and Mechanic will be
+	extensively referenced in the database.
+</li><li> the database should store every employee's name (consists of first name and last name), TFN and salary.
+                                                                  </li><li> both the salary and commission rate are integers, and must be larger than 0. Also refer to the assignment spec for  further constraints on the commission rate (i.e., each salesman will have a negotiated commission rate ranging from 5% to max 20%).
+</li><li> we assume that both first name and last name are not longer than 50 characters.
+</li><li> TFN has exactly 9 digits.
+</li><li> the mechanic's license is alphanumeric, with exactly 8 characters.
+</li><li> all attributes in the above ER diagram cannot have a null value.
+</li></ul>
+
+<h3 class="entity">Client and Car</h3>
+<p>
+The following diagram shows entities, attributes and relationships for clients and cars.
+</p>
+<div align="center"><img src="./COMP9311 17s2 - Assignment 1 (Stage 2)_files/client.png"><img src="./COMP9311 17s2 - Assignment 1 (Stage 2)_files/car.png"></div>
+<p>Details (Car):</p>
+<ul>
+<li> We assume that VIN is exactly 17-character long and does not include the letters I, O, or Q (to avoid confusion with numerals 1 and 0)
+</li><li> Year is between 1970-2099 inclusive.
+</li><li> Model and Manufacturer are of maximum 40 characters each.
+</li><li> Car license is of maximum 6 alphanumeric characters.
+</li><li> Except for the list of options, all other information as specified by their corresponding attributes are compulsory.
+</li><li> Use the defined domain OptionType for a list of possible options.
+</li></ul>
+<p>Details (Client):</p>
+<ul>
+<li> we assume that name is no longer than 100 characters.
+</li><li> we use a system-generated, numeric CID as a primary key.
+</li><li> address is maximum 200 characters.
+</li><li> Phone number has exactly 10 digits (mobile or landline with area code).
+</li><li> if a client does not have an ABN (i.e., it is not a company), all information is compulsory except the email address. The database should check if the input email is of a proper email format (using the defined EmailType domain).
+
+</li><li> ABN has exactly 11 digits.
+</li><li> If an ABN is provided (i.e., it is a company), an optional Web address of the company is stored.
+A URL should start with http://...
+</li></ul>
+
+<h3 class="entity">Buy, Sell and Repair</h3>
+<p>
+The following diagram shows entities, attributes and relationships for the rest of the design for OzCars.
+</p>
+<div align="center"><img src="./COMP9311 17s2 - Assignment 1 (Stage 2)_files/main.png"></div>
+<p>Details:</p>
+<ul>
+<li> Any monetary amounts should be defined using the type <tt>numeric</tt> with 2 decimal digits and they should all be positive numbers. All monetary amounts will not exceed 6 integral digits.          
+</li><li> Description has a maximum of 250 characters.
+</li><li> RepairJob Number is a number between 1 and 999 inclusive.
+</li><li> Phone number has exactly 10 digits (mobile or landline with area code).
+</li><li> As specified in the requirements, the clients involved in a car transaction are the owners of the car.
+</li></ul>
+
+
+<h3>What To Do Now</h3>
+<p>
+Make sure you read the above description thoroughly, and review the
+notes and exercises on ER-to-Relational mapping.
+Get a copy of the a1.sql <a href="https://www.cse.unsw.edu.au/~cs9311/17s2/assignments/a1/a1template.sql">template</a> and see what is provided there.
+If any aspect of this design requires further clarification,
+ask a question under topic <q>Assignment 1 (Stage 2)</q> on the course website Forums.
+</p>
+<p>
+<b>Reminder:</b> before you submit, ensure that your schema will load
+without error if used as follows on <tt>grieg</tt>:
+</p>
+<pre>% <b>dropdb a1</b>
+% <b>createdb a1</b>
+% <b>psql a1 -f a1.sql</b>
+<span class="comment">... will produce notices, but should have no errors ...</span>
+% <b>psql a1</b>
+<span class="comment">... can start using the complete database ...</span>
+</pre>
+<p>
+<b>Penalty:</b> If we have to fix errors in your schema before it will load, you will incur 3 (out of a total of 10) marks "penalty".
+</p>
+
+<h3>Plagiarism</h3>
+The work you submit must be your own work. Submission of work partially or completely derived from any other person or jointly written with any other person is not permitted. The penalties for such an offence may include negative marks, automatic failure of the course and possibly other academic discipline. Assignment submissions will be examined both automatically and manually for such submissions. 
+<p>
+Relevant scholarship authorities will be informed if students holding scholarships are involved in an incident of plagiarism or other misconduct. 
+</p><p>
+Do not provide or show your assignment work to any other person - apart from the teaching staff of this subject. If you knowingly provide or show your assignment work to another person for any reason, and work derived from it is submitted you may be penalized, even if the work was submitted without your knowledge or consent. This may apply even if your work is submitted by a third party unknown to you. 
+
+
+
+</p></body></html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0066)https://www.cse.unsw.edu.au/~cs9311/17s2/assignments/a3/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>COMP9311 17s2 - Assignment 3</title>
+<!--
+<link rel='stylesheet' type='text/css' href='http://www.cse.unsw.edu.au/~cs9311/17s2/9311.css'>
+-->
+
+<style>
+body {font-size:11pt;font-family:arial,sans-serif;margin:5px 10px;}
+a {color:#3333CC;text-decoration:none;}
+a[href]:hover {color:#CC0000;background:#FFFFCC;}
+h2 {color:#99BB55;}
+small {font-size:75%}
+pre {background:#EEEEFF;border:thin solid #9999CC;margin:5px 20px 5px 20px;padding:4px 8px;}
+span.toggle {font-size:67%;}
+span.notice {font-size:110%;}
+span.tiny {font-size:75%;font-weight:normal;}
+span.heading {font-size:18pt;font-weight:bold;color:#99BB55;}
+span.marks {font-weight:normal;font-size:75%;}
+span.identifier {color:#993300;font-size:110%;font-weight:bold;font-family:courier;}
+tr.heading {font-size:large;font-weight:bold;background-color:#AACC66;}
+table.note {border:thin solid black;padding:2pt;width:75%}
+div.note {border:thin solid black;font-size:90%;margin:5px 60px 5px 60px;padding:4px 8px;}
+dt.item {font-weight:bold;}
+.red {color:#CC0000;}
+.green {color:#006600;}
+.brown {color:#993300;}
+.grey {color:#CCCCCC;}
+.comment {font-size:90%;color:#666666}
+.important {font-weight:bold;color:#CC0000;}
+.bigQ {font-size:13pt;font-style:italic;}
+</style>
+
+</head>
+
+<body>
+
+<div align="center">
+ <table width="100%" border="0">
+  <tbody><tr valign="top">
+   <td align="left" width="25%">
+    <span class="tiny"><a href="http://www.cse.unsw.edu.au/~cs9311">COMP9311 17s2</a></span>
+   </td>
+   <td align="center" width="50%">
+    <span class="heading">Assignment 3</span>
+   </td>
+   <td align="right" width="25%">
+    <span class="tiny"><a href="http://www.cse.unsw.edu.au/~cs9311">Database Systems</a></span>
+   </td>
+  </tr>
+ </tbody></table>
+</div>
+
+<div style="text-align:center;font-size:80%;color:#555555;margin-top:5px;">
+Last updated: <b>Sunday 17th September 2017</b> <br>
+Most recent changes will be shown in <span class="red">red</span>. <br>
+</div>
+
+<h2>Aims</h2>
+
+<p>This is a written assignment for you to practise and verify your knowledge on data dependencies, data normalisation, relational algebra, and basic transaction and concurrency.
+You will need to answer all the questions and submit your solution as a PDF file via the give command.
+This assignment is worth a total of <b>15 marks</b>.
+</p>
+
+<h2>Questions</h2>
+
+<ol>
+<li> <i>[<b>6 marks</b>]</i>
+<p>
+Consider a relation <i>R (A, B, C, D, E, F)</i>.
+For each of the following sets of functional dependencies (i.e., i. to iv.),
+assuming that those are the only dependencies that hold for <i>R</i>, do the following:
+</p>
+<ol type="a">
+<li> <p>List all of the candidate keys for <i>R</i>.</p>
+</li><li> <p>What are the BCNF violations, if any?</p>
+</li><li> <p>Decompose the relation, as necessary, into collections of BCNF relations?</p>
+</li></ol>
+<p>
+</p><ol type="i">
+<li>
+<p><i>
+AD &#8594; B, &nbsp;
+C &#8594; D, &nbsp;
+BC &#8594; A, &nbsp;
+B &#8594; D
+</i></p>
+
+</li><li>
+<p><i>
+BC &#8594; E, &nbsp;
+C &#8594; AB, &nbsp;
+AF &#8594; CD
+</i></p>
+
+</li><li>
+<p><i>
+ABF &#8594; D, &nbsp;
+CD &#8594; E, &nbsp;
+BD &#8594; A
+</i></p>
+
+</li><li>
+<p><i>
+AB &#8594; D, &nbsp;
+BCD &#8594; EF, &nbsp;
+B &#8594; C
+</i></p>
+</li></ol>
+<br><br>
+
+</li><li><i>[<b>4 marks</b>]</i>
+<p>
+Assuming the schema from <a href="https://www.cse.unsw.edu.au/~cs9311/17s2/assignments/a2/index.html">Assignment 2</a> (i.e., the ASX database), give the following queries in relational algebra:</p>
+<ol type="i">
+<li> List all the company names that are in the sector of "Technology".
+<p></p>
+</li><li> List all the company codes that have more than five executive members on record (i.e., at least six).
+<p></p>
+</li><li> Output the person names of the executives that are affiliated with more than one company.
+<p></p>
+</li><li> List all the companies (by their Code) that are the only one in their Industry (i.e., no competitors).
+Same as Assignment 2, please include both Code and Industry in the output.
+<p></p>
+</li></ol>
+<br><br>
+
+
+</li><li><i>[<b>3 marks</b>]</i>
+<p>
+Suppose that the relations R, S and T have <i>r</i> tuples, <i>s</i> tuples and <i>t</i> tuples, respectively.
+Derive the minimum and maximum numbers of tuples that the results of the following expressions can have:
+</p>
+<ol type="i">
+<li> R UNION (S INTERSECT T). 
+<p></p>
+</li><li> SEL<small>[c]</small> (R × S), for some condition c.
+<p></p>
+</li><li> R - PROJ<small>[a]</small> (R JOIN S), for some list of attributes a.
+<p></p>
+</li></ol>
+<br><br>
+
+
+</li><li><i>[<b>2 marks</b>]</i>
+
+<ol type="i">
+<li>
+<p>
+For the following execution schedule, construct its precedence graph. Is this schedule serialisable? Explain your answer.
+</p>
+<pre>T1:R(X) T2:R(X) T1:W(X) T2:W(X) T2:R(Y) T1:R(Y) T1:W(Y) T2:W(X)
+</pre>
+<br><br>
+
+</li><li>
+<p>
+For the following execution schedule, construct its precedence graph. Is this schedule serialisable? Explain your answer.
+</p>
+<pre>T3:R(X) T4:W(Y) T4:W(Z) T1:W(Y) T2:R(Y) T3:R(D) T2:W(X) T1:R(X)
+</pre>
+</li></ol>
+<br><br>
+</li></ol>
+
+<h2>Submission</h2>
+<p>
+<b>Submission</b> : &nbsp; Login to a CSE Linux machine such as <tt>wagner</tt>
+and use the give command below to submit your assignment (note that the give command does not work on <tt>grieg</tt>):
+</p><p><b><tt>give cs9311 a3 a3.pdf</tt></b>
+</p>
+<p>
+<b>Deadline</b>: &nbsp; Friday 13th October 2017 @ 23:59
+</p>
+<p>
+<b>Late Penalty</b>: &nbsp; 
+Late submissions will attract a 10% penalty for each day.
+</p>
+<br><br>
+
+<h2>Plagiarism</h2>
+<p>
+The work you submit must be your own work. Submission of work partially or completely derived from any other person or jointly written with any other person is not permitted. The penalties for such an offence may include negative marks, automatic failure of the course and possibly other academic discipline. Assignment submissions will be examined both automatically and manually for such submissions.
+</p><p>
+Relevant scholarship authorities will be informed if students holding scholarships are involved in an incident of plagiarism or other misconduct.
+</p><p>
+Do not provide or show your assignment work to any other person - apart from the teaching staff of this subject. If you knowingly provide or show your assignment work to another person for any reason, and work derived from it is submitted you may be penalized, even if the work was submitted without your knowledge or consent. This may apply even if your work is submitted by a third party unknown to you.
+</p>
+
+
+</body></html>

@@ -1,0 +1,12 @@
+﻿  A2.c
+A2.c(123): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+A2.c(124): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+A2.c(164): warning C4267: 'function': conversion from 'size_t' to 'int', possible loss of data
+A2.c(161): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating code
+  2 of 9 functions (22.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  A2.vcxproj -> C:\OneDrive\UNSW\COMP9024\Assignment2_17s2\wordchains\x64\Release\A2.exe
+  A2.vcxproj -> C:\OneDrive\UNSW\COMP9024\Assignment2_17s2\wordchains\x64\Release\A2.pdb (Full PDB)

@@ -1,0 +1,9 @@
+﻿  dfs.cpp
+     Creating library C:\Users\seren\Desktop\dfs\x64\Release\dfs.lib and object C:\Users\seren\Desktop\dfs\x64\Release\dfs.exp
+  Generating code
+  4 of 406 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  dfs.vcxproj -> C:\Users\seren\Desktop\dfs\x64\Release\dfs.exe
+  dfs.vcxproj -> C:\Users\seren\Desktop\dfs\x64\Release\dfs.pdb (Full PDB)

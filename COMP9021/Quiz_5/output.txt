@@ -1,0 +1,100 @@
+
+Enter four nonnegative integers:0 2 20 20
+The number of paths from 1 to 1 is: 14
+The number of paths from 1 to 2 is: 188
+
+Enter four nonnegative integers:0 4 40 40
+The number of paths from 1 to 1 is: 140
+The number of paths from 1 to 2 is: 106
+The number of paths from 1 to 3 is: 86
+The number of paths from 1 to 4 is: 72
+
+Enter four nonnegative integers:0 6 60 60
+The number of paths from 1 to 1 is: 289
+The number of paths from 1 to 2 is: 176
+The number of paths from 1 to 3 is: 78
+The number of paths from 1 to 4 is: 34
+The number of paths from 1 to 5 is: 15
+The number of paths from 1 to 6 is: 5
+
+Enter four nonnegative integers:0 8 80 80
+The number of paths from 1 to 1 is: 432
+The number of paths from 1 to 2 is: 221
+The number of paths from 1 to 3 is: 79
+The number of paths from 1 to 4 is: 14
+The number of paths from 1 to 5 is: 8
+The number of paths from 1 to 6 is: 2
+The number of paths from 1 to 7 is: 3
+
+Enter four nonnegative integers:0 10 100 100
+The number of paths from 1 to 1 is: 586
+The number of paths from 1 to 2 is: 255
+The number of paths from 1 to 3 is: 69
+The number of paths from 1 to 4 is: 16
+The number of paths from 1 to 5 is: 4
+The number of paths from 1 to 6 is: 3
+The number of paths from 1 to 7 is: 1
+
+Enter four nonnegative integers:0 12 120 120
+The number of paths from 1 to 1 is: 827
+The number of paths from 1 to 2 is: 259
+The number of paths from 1 to 3 is: 56
+The number of paths from 1 to 4 is: 18
+The number of paths from 1 to 5 is: 1
+
+Enter four nonnegative integers:0 14 140 140
+The number of paths from 1 to 1 is: 995
+The number of paths from 1 to 2 is: 269
+The number of paths from 1 to 3 is: 60
+The number of paths from 1 to 4 is: 17
+
+Enter four nonnegative integers:0 16 160 160
+The number of paths from 1 to 1 is: 1194
+The number of paths from 1 to 2 is: 283
+The number of paths from 1 to 3 is: 50
+The number of paths from 1 to 4 is: 8
+The number of paths from 1 to 5 is: 1
+The number of paths from 1 to 6 is: 2
+
+Enter four nonnegative integers:0 18 180 180
+The number of paths from 1 to 1 is: 1363
+The number of paths from 1 to 2 is: 294
+The number of paths from 1 to 3 is: 52
+The number of paths from 1 to 4 is: 5
+The number of paths from 1 to 5 is: 1
+
+Enter four nonnegative integers:0 20 200 200
+The number of paths from 1 to 1 is: 1555
+The number of paths from 1 to 2 is: 307
+The number of paths from 1 to 3 is: 50
+The number of paths from 1 to 4 is: 6
+
+Enter four nonnegative integers:0 22 220 220
+The number of paths from 1 to 1 is: 1790
+The number of paths from 1 to 2 is: 305
+The number of paths from 1 to 3 is: 37
+The number of paths from 1 to 4 is: 2
+
+Enter four nonnegative integers:0 24 240 240
+The number of paths from 1 to 1 is: 1990
+The number of paths from 1 to 2 is: 337
+The number of paths from 1 to 3 is: 42
+The number of paths from 1 to 4 is: 3
+
+Enter four nonnegative integers:0 26 260 260
+The number of paths from 1 to 1 is: 2172
+The number of paths from 1 to 2 is: 353
+The number of paths from 1 to 3 is: 32
+The number of paths from 1 to 4 is: 5
+
+Enter four nonnegative integers:0 28 280 280
+The number of paths from 1 to 1 is: 2368
+The number of paths from 1 to 2 is: 325
+The number of paths from 1 to 3 is: 47
+The number of paths from 1 to 4 is: 2
+
+Enter four nonnegative integers:0 30 300 300
+The number of paths from 1 to 1 is: 2597
+The number of paths from 1 to 2 is: 308
+The number of paths from 1 to 3 is: 28
+The number of paths from 1 to 4 is: 1
